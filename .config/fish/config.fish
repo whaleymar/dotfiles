@@ -1,3 +1,21 @@
+## Set values
+# Hide welcome message
+set fish_greeting
+set VIRTUAL_ENV_DISABLE_PROMPT "1"
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
+# Add ~/.local/bin to PATH
+if test -d ~/.local/bin
+    if not contains -- ~/.local/bin $PATH
+        set -p PATH ~/.local/bin
+    end
+end
+
+## Starship prompt
+if status --is-interactive
+   source (starship init fish --print-full-init | psub)
+end
+
 ## Useful aliases
 # Replace ls with exa
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
