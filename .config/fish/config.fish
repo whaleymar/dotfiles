@@ -2,7 +2,7 @@
 # Hide welcome message
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
 
 # Add ~/.local/bin to PATH
 if test -d ~/.local/bin
@@ -26,7 +26,7 @@ alias l.='exa -ald --color=always --group-directories-first --icons .*' # show o
 alias ip='ip -color'
 
 # Replace some more things with better alternatives
-alias cat='bat --style header --style snip --style changes --style header'
+alias cat='batcat --style header --style snip --style changes --style header'
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
 # Common use
